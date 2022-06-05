@@ -1,0 +1,25 @@
+tree:
+  -
+    id: 29dac9b1-ab75-4b08-96aa-a044498391bd
+    title: Home
+    url: /
+  -
+    id: 12213a02-94a2-4a5a-89cf-fa2f1fefd8be
+    title: Blog
+    url: /blog
+  -
+    id: bc00943a-627b-43bd-9a71-a1f166b66f2a
+    title: Contact
+    url: contact
+  -
+    id: ff76e736-2476-4274-a70b-7a0e4a93213d
+    title: Socials
+    children:
+      -
+        id: f87b22a4-8a19-4cf7-bb24-c08060db677c
+        title: Github
+        url: 'https://github.com/dcyar'
+      -
+        id: 728a335f-ab52-463c-a6e9-89d3a581092d
+        title: Linkedin
+        url: 'https://linkedin.com/jhon.achata'

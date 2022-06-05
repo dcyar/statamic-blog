@@ -5,12 +5,52 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ title ?? site:name }}</title>
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
+        <link
+            crossorigin="crossorigin"
+            href="https://fonts.gstatic.com"
+            rel="preconnect"
+        />
+        <link
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="preload"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+        />
+        <link rel="stylesheet" href="{{ mix src='/css/tailwind.css' }}">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/atom-one-dark.min.css"
+        />
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+        <!--Alpine Js V3-->
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     </head>
-    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
-        <div class="mx-auto px-2 lg:min-h-screen flex flex-col items-center justify-center">
-            {{ template_content }}
+    <body x-data="global()"
+          x-init="themeInit()"
+          :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''"
+          class="dark:bg-primary"
+    >
+    <div id="main">
+        {{ partial:header }}
+
+        <div>
+            <div class="container mx-auto">
+                {{ template_content }}
+            </div>
         </div>
-        <script src="{{ mix src='/js/site.js' }}"></script>
+
+        {{ partial:footer }}
+    </div>
+    <script src="/assets/js/main.js"></script>
     </body>
 </html>

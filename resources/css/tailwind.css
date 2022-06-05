@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 
-@import "site";
-
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@import "site.css";

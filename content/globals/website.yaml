@@ -1,0 +1,9 @@
+title: Website
+data:
+  name: 'JhOn Achata'
+  copyright: '2022'
+  social_medias:
+    - github
+    - linkedin
+    - facebook
+  logo: img/logo.svg

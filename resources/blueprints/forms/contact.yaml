@@ -1,0 +1,63 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          input_type: text
+          antlers: false
+          display: Name
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - 'min:3'
+          placeholder: 'Enter your name'
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - email
+          placeholder: 'Enter your email'
+      -
+        handle: subject
+        field:
+          input_type: text
+          antlers: false
+          display: Subject
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - 'min:3'
+          placeholder: 'Enter a subject'
+      -
+        handle: comment
+        field:
+          antlers: false
+          display: Comment
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - 'min:10'
+          placeholder: 'Enter your message'

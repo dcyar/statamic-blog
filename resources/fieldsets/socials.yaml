@@ -1,0 +1,24 @@
+title: Socials
+fields:
+  -
+    handle: gihub
+    field:
+      input_type: text
+      antlers: false
+      display: Gihub
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      read_only: false
+  -
+    handle: facebook
+    field:
+      input_type: text
+      antlers: false
+      display: Facebook
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      read_only: false

@@ -1,0 +1,48 @@
+<div class="container mx-auto">
+    <div
+        class="flex flex-col items-center justify-between border-t border-grey-lighter py-10 sm:flex-row sm:py-12"
+    >
+        <div class="mr-auto flex flex-col md:flex-row items-center space-x-10">
+            <div class="flex flex-col items-center sm:flex-row">
+                <a href="/" class="mr-auto sm:mr-6">
+                    <img src="{{ website:logo }}" alt="logo" />
+                </a>
+                <p class="pt-5 font-body font-light text-primary dark:text-white sm:pt-0">
+                    &copy; {{ website:copyright }} {{ website:name }}
+                </p>
+            </div>
+            <div class="pt-5 sm:mr-0 sm:pt-0">
+                <ul class="space-y-1">
+                    {{ nav:footer }}
+                    <li>
+                        {{ if is_parent }}
+                            <span>{{ title }}</span>
+                        {{ else }}
+                            <a href="{{ url }}">{{ title }}</a>
+                        {{ /if }}
+                        {{ if children }}
+                        <ul class="ml-4">
+                            {{ children }}
+                                <li><a href="{{ url }}" {{ if is_external }} target="_blank" rel="noopener" {{ /if }}>{{ title }}</a></li>
+                            {{ /children }}
+                        </ul>
+                        {{ /if }}
+                    </li>
+                    {{ /nav:footer }}
+                </ul>
+            </div>
+        </div>
+        <div class="flex items-center pt-5 sm:mr-0 sm:pt-0">
+            {{ nav:footer_socials select="url|icon|active" active:is="true" }}
+                {{ if active }}
+                <p>hey</p>
+                {{ /if }}
+                <a href="{{ url }}" target="_blank">
+                    <i
+                        class="text-4xl text-primary dark:text-white pl-5 hover:text-secondary dark:hover:text-secondary transition-colors bx bxl-{{icon}}"
+                    ></i>
+                </a>
+            {{ /nav:footer_socials }}
+        </div>
+    </div>
+</div>

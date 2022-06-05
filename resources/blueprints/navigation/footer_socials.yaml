@@ -1,0 +1,31 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: icon
+        field:
+          input_type: text
+          antlers: false
+          display: Icon
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - 'unique_entry_value:{collection},{id},{site}'
+          instructions: 'Icons from BoxIcons'
+      -
+        handle: active
+        field:
+          inline_label: 'Show in the page'
+          default: true
+          display: Active
+          type: toggle
+          icon: toggle
+          instructions: 'Set active to show in public page'
+          listable: hidden
+          instructions_position: above
+          read_only: false

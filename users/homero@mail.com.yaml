@@ -1,0 +1,8 @@
+name: 'Homero Simpson'
+super: true
+id: eff3a473-a83d-4a2f-97d7-4674d93fd70f
+password_hash: $2y$10$oSKy6jZOU5WlXQv4kdWsAuUtWYuh4sxdxN45CvyXN0NbdSb4WpQBO
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

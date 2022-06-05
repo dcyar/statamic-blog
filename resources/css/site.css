@@ -1,1 +1,43 @@
-/* This is all you. */
+@layer utilities {
+    .font-body {
+        font-family: Poppins,sans-serif;
+    }
+}
+
+@layer base {
+    html {
+        @apply font-body antialiased;
+    }
+}
+
+@layer components {
+    .twitter-card {
+        @apply mt-8 mb-8 rounded bg-yellow-lighter px-6 py-8 sm:mt-10 sm:mb-10 md:px-10;
+    }
+    .twitter-title {
+      @apply mt-0 font-body text-lg font-normal text-blue-dark dark:text-blue-dark sm:text-xl;
+    }
+
+    .twitter-source {
+      @apply block pt-2 font-body text-sm font-light text-blue-dark underline;
+    }
+
+    .twitter-btn {
+      @apply mt-8 mb-0 inline-block border border-blue-dark px-5 py-2 font-body font-semibold text-blue-dark no-underline transition-colors hover:bg-primary hover:text-white sm:mb-4;
+    }
+}
+
+.container {
+    max-width: 600px;
+}
+
+@screen sm {
+    .container {
+        max-width: 700px;
+    }
+}
+@screen md {
+    .container {
+        max-width: 850px;
+    }
+}
