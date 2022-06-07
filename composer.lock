@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36f2f3776331288525e3fdd505358d35",
+    "content-hash": "414c1324e82d325db2eb13a5812a8116",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -184,6 +184,62 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "cnj/seotamic",
+            "version": "v2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cnj-digital/seotamic.git",
+                "reference": "49348d85dbb035d5eb296b2a0a1a343d325908d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cnj-digital/seotamic/zipball/49348d85dbb035d5eb296b2a0a1a343d325908d7",
+                "reference": "49348d85dbb035d5eb296b2a0a1a343d325908d7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3.4||^8.0",
+                "statamic/cms": "^3.0.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0||^5.0",
+                "phpunit/phpunit": "^8.5||^9.0"
+            },
+            "type": "statamic-addon",
+            "extra": {
+                "statamic": {
+                    "name": "Seotamic",
+                    "description": "Simple SEO addon for Statamic v3"
+                },
+                "laravel": {
+                    "providers": [
+                        "Cnj\\Seotamic\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Cnj\\Seotamic\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Koterle",
+                    "email": "martin@cnj.si"
+                }
+            ],
+            "description": "Simple SEO addon for Statamic v3",
+            "support": {
+                "issues": "https://github.com/cnj-digital/seotamic/issues",
+                "source": "https://github.com/cnj-digital/seotamic/tree/v2.0.6"
+            },
+            "time": "2022-04-15T11:08:14+00:00"
         },
         {
             "name": "composer/ca-bundle",

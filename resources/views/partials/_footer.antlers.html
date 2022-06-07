@@ -16,14 +16,14 @@
                     {{ nav:footer }}
                     <li>
                         {{ if is_parent }}
-                            <span>{{ title }}</span>
+                            <span class="dark:text-white">{{ title }}</span>
                         {{ else }}
-                            <a href="{{ url }}">{{ title }}</a>
+                            <a href="{{ url }}" class="dark:text-white">{{ title }}</a>
                         {{ /if }}
                         {{ if children }}
                         <ul class="ml-4">
                             {{ children }}
-                                <li><a href="{{ url }}" {{ if is_external }} target="_blank" rel="noopener" {{ /if }}>{{ title }}</a></li>
+                                <li><a href="{{ url }}" class="dark:text-white" {{ if is_external }} target="_blank" rel="noopener" {{ /if }}>{{ title }}</a></li>
                             {{ /children }}
                         </ul>
                         {{ /if }}
@@ -34,9 +34,6 @@
         </div>
         <div class="flex items-center pt-5 sm:mr-0 sm:pt-0">
             {{ nav:footer_socials select="url|icon|active" active:is="true" }}
-                {{ if active }}
-                <p>hey</p>
-                {{ /if }}
                 <a href="{{ url }}" target="_blank">
                     <i
                         class="text-4xl text-primary dark:text-white pl-5 hover:text-secondary dark:hover:text-secondary transition-colors bx bxl-{{icon}}"

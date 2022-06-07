@@ -27,59 +27,69 @@
             Subscribe
         </button>
     </form>
-    <div class="pt-8 lg:pt-12">
-        {{ collection:blog sort="date:desc" }}
-            <div class="border-b border-grey-lighter pb-8">
-                <span
-                    class="mb-4 inline-block rounded-full bg-green-light px-2 py-1 font-body text-sm text-green"
-                >{{ category }}</span
-                >
-                <a
-                    href="{{ url }}"
-                    class="block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary"
-                >{{ title }}</a
-                >
-                <div
-                    class="prose prose max-w-none border-b border-grey-lighter py-4 dark:prose-dark"
-                >
-                    {{ content | excerpt }}
+    {{ collection:blog paginate="1" as="posts" sort="date:desc" }}
+        <div class="pt-8 lg:pt-12">
+                {{ posts }}
+                    <div class="border-b border-grey-lighter pb-8">
+                    <span
+                        class="mb-4 inline-block rounded-full bg-green-light px-2 py-1 font-body text-sm text-green"
+                    >{{ category }}</span
+                    >
+                    <a
+                        href="{{ url }}"
+                        class="block font-body text-lg font-semibold text-primary transition-colors hover:text-green dark:text-white dark:hover:text-secondary"
+                    >{{ title }}</a
+                    >
+                    <div
+                        class="prose prose max-w-none border-b border-grey-lighter py-4 dark:prose-dark"
+                    >
+                        {{ content | excerpt }}
+                    </div>
+                    <div class="flex space-x-1 mt-2">
+                        {{ tags }}
+                            <span class="text-white dark:bg-secondary text-xs bg-primary rounded-lg p-1">{{ title }}</span>
+                        {{ /tags }}
+                    </div>
+                    <div class="flex items-center pt-4">
+                        <p class="pr-2 font-body font-light text-primary dark:text-white">
+                            {{ date format='d-m-Y' }}
+                        </p>
+                        <span class="font-body text-grey dark:text-white">//</span>
+                        <p class="pl-2 font-body font-light text-primary dark:text-white">
+                            {{ author:name }}
+                        </p>
+                    </div>
                 </div>
-                <div class="flex space-x-1">
-                    {{ tags }}
-                    <span class="text-white text-xs bg-primary rounded-lg p-1">{{ title }}</span>
-                    {{ /tags }}
-                </div>
-                <div class="flex items-center pt-4">
-                    <p class="pr-2 font-body font-light text-primary dark:text-white">
-                        {{ date format='d-m-Y' }}
-                    </p>
-                    <span class="font-body text-grey dark:text-white">//</span>
-                    <p class="pl-2 font-body font-light text-primary dark:text-white">
-                        {{ author:name }}
-                    </p>
-                </div>
-            </div>
-        {{ /collection:blog }}
-    </div>
-    <div class="flex pt-8 lg:pt-16">
-        <span
-            class="cursor-pointer border-2 border-secondary px-3 py-1 font-body font-medium text-secondary"
-        >1</span
-        >
-        <span
-            class="ml-3 cursor-pointer border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
-        >2</span
-        >
-        <span
-            class="ml-3 cursor-pointer border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
-        >3</span
-        >
-        <span
-            class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
-        >Next
-        <i
-            class="bx bx-right-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary dark:text-white"
-        ></i
-        ></span>
-    </div>
+                {{ /posts }}
+        </div>
+        {{ if paginate:links | count > 0 }}
+            {{ paginate }}
+                <div class="flex pt-8 lg:pt-16 space-x-2">
+            <a
+                href="{{ prev_page }}"
+                class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
+            ><i
+                class="bx bx-left-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary dark:text-white"
+            ></i>
+                Previous
+            </a>
+            {{ links:all }}
+            <a
+                href="{{ url }}"
+                class="cursor-pointer border-2 px-3 py-1 font-body font-medium {{ if current_page === page }}border-secondary text-secondary{{ /if }}"
+            >{{ page }}</a
+            >
+            {{ /links:all }}
+            <a
+                href="{{ next_page }}"
+                class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
+            >Next
+                <i
+                    class="bx bx-right-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary dark:text-white"
+                ></i
+                ></a>
+        </div>
+            {{ /paginate }}
+        {{ /if }}
+    {{ /collection:blog }}
 </div>
