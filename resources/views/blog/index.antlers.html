@@ -27,7 +27,7 @@
             Subscribe
         </button>
     </form>
-    {{ collection:blog paginate="1" as="posts" sort="date:desc" }}
+    {{ collection:blog paginate="10" as="posts" sort="date:desc" }}
         <div class="pt-8 lg:pt-12">
                 {{ posts }}
                     <div class="border-b border-grey-lighter pb-8">

@@ -1,0 +1,21 @@
+<div class="py-16 lg:py-20">
+    <div>
+        <img src="/assets/img/icon-blog.png" alt="icon envelope" />
+    </div>
+    <h1
+        class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl"
+    >
+        Projects
+    </h1>
+    <div class="pt-3 sm:w-3/4 mb-5">
+        <p class="font-body text-xl font-light text-primary dark:text-white">
+            {{ content }}
+        </p>
+    </div>
+    {{ collection:projects is_active:is="true" paginate="10" as="projects" sort="date:desc" }}
+        {{ projects }}
+            {{ partial:projects/card :project="project" }}
+        {{ /projects }}
+        {{ partial:partials/pagination }}
+    {{ /collection:projects }}
+</div>

@@ -77,6 +77,14 @@ return [
                 'log',
             ],
         ],
+        'mailjet' => [
+            'transport'  => 'smtp',
+            'host'       => env('MAILJET_HOST', 'in-v3.mailjet.com'),
+            'port'       => env('MAILJET_PORT', 587),
+            'encryption' => env('MAILJET_ENCRYPTION', 'TLS'),
+            'username'   => env('MAILJET_API_KEY'),
+            'password'   => env('MAILJET_SECRET_KEY'),
+        ],
     ],
 
     /*

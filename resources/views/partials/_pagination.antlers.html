@@ -1,0 +1,29 @@
+{{ if paginate:links | count > 0 }}
+{{ paginate }}
+<div class="flex pt-8 lg:pt-16 space-x-2">
+    <a
+        href="{{ prev_page }}"
+        class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
+    ><i
+        class="bx bx-left-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary dark:text-white"
+    ></i>
+        Previous
+    </a>
+    {{ links:all }}
+    <a
+        href="{{ url }}"
+        class="cursor-pointer border-2 px-3 py-1 font-body font-medium {{ if current_page === page }}border-secondary text-secondary{{ /if }}"
+    >{{ page }}</a
+    >
+    {{ /links:all }}
+    <a
+        href="{{ next_page }}"
+        class="group ml-3 flex cursor-pointer items-center border-2 border-primary px-3 py-1 font-body font-medium text-primary transition-colors hover:border-secondary hover:text-secondary dark:border-green-light dark:text-white dark:hover:border-secondary dark:hover:text-secondary"
+    >Next
+        <i
+            class="bx bx-right-arrow-alt ml-1 text-primary transition-colors group-hover:text-secondary dark:text-white"
+        ></i
+        ></a>
+</div>
+{{ /paginate }}
+{{ /if }}

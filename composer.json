@@ -17,7 +17,8 @@
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
         "rias/statamic-markdown-highlight": "^2.0",
-        "statamic/cms": "3.3.*"
+        "statamic/cms": "3.3.14",
+        "statamic/ssg": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

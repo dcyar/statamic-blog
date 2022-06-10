@@ -8,3 +8,12 @@ preferences:
       after_save: continue_editing
     blog:
       after_save: continue_editing
+    projects:
+      after_save: continue_editing
+  forms:
+    contact:
+      columns:
+        - datestamp
+        - name
+        - email
+        - subject

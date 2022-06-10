@@ -38,7 +38,25 @@ return [
     */
 
     'widgets' => [
-        'getting_started',
+//        'getting_started',
+        [
+            'type' => 'collection',
+            'collection' => 'projects',
+            'limit' => 5,
+            'width' => 50
+        ],
+        [
+            'type' => 'collection',
+            'collection' => 'blog',
+            'limit' => 10,
+            'width' => 50
+        ],
+        [
+            'type' => 'form',
+            'form' => 'contact',
+            'fields' => ['name', 'email', 'subject'],
+            'limit' => 10
+        ],
     ],
 
     /*
